@@ -4,10 +4,14 @@ public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        double para, paraKdv, kdvTutar, kdv = 0.18;
+        double para, paraKdv, kdvTutar, kdv;
+        boolean kdvDurum;
 
         System.out.print("KDV'sini Hesaplamak İstediginiz Tutarı Giriniz: ");
         para = scan.nextInt();
+
+        kdvDurum = (0 < para) && (1000 > para);
+        kdv = kdvDurum ? 0.18 : 0.8;
 
         kdvTutar = kdv * para;
         paraKdv = kdvTutar + para;
